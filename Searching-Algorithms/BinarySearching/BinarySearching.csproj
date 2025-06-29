@@ -7,4 +7,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="MergeSort">
+      <HintPath>..\..\Sorting-Algorithms\MergeSort\obj\Debug\net8.0\MergeSort.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
