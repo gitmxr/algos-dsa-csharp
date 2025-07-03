@@ -1,4 +1,5 @@
-﻿using System.Linq.Expressions;
+﻿using CommonUtils;
+using System.Linq.Expressions;
 
 namespace LinearSearch
 {
@@ -10,7 +11,7 @@ namespace LinearSearch
             int[] arr = Utils.GenRandArray();
             Utils.PrintArray(arr);
             Console.Write("\nEnter the Element U Wanna Find!:");
-            int Target = int.Parse(Console.ReadLine());
+            int Target = int.Parse(Console.ReadLine()!);
             List<int> indicesFound =  LinearSearch(arr,Target);
             if (indicesFound.Count == 0)
             {

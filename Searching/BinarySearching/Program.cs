@@ -1,4 +1,4 @@
-﻿using LinearSearch;
+﻿using CommonUtils;
 
 namespace BinarySearching
 {
@@ -6,16 +6,16 @@ namespace BinarySearching
     {
         static void Main(string[] args)
         {
-            int[] randArray = Utils.GenRandArray();
+            int[] randArray = CommonUtils.Utils.GenRandArray();
             int[] sortedArray = Utils.BubbleSort(randArray);
             Console.WriteLine("A Sorted Array:");
             Utils.PrintArray(sortedArray);
             Console.Write("\nEnter the Element U wanna Find! ");
-            int target = int.Parse(Console.ReadLine());
+            int target = int.Parse(Console.ReadLine()!);
             int index = BinarySearch(sortedArray, target);
 
             if (index != -1)
-                Console.WriteLine($"Element found at index {index}");
+                Console.WriteLine($"Element found through BinarySearch at index {index}");
             else
                 Console.WriteLine("Element not found.");
         }

@@ -1,30 +1,17 @@
-﻿
+﻿using CommonUtils;
 namespace BubbleSort
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[] randomNo = new int[100];
-            Random random = new Random();
-            for (int i = 0; i < randomNo.Length; i++)
-            {
-                randomNo[i] = random.Next(60, 101);
-            }
+            int[] randomNo = Utils.GenRandArray();
             Console.WriteLine("Unsorted Array:");
-            PrintArray(randomNo);
+            Utils.PrintArray(randomNo);
             BubbleSort(randomNo);
-            Console.WriteLine("\nSorted Array");
-            PrintArray(randomNo);
+            Console.WriteLine("\nSorted Array(Bubble-Sort)");
+            Utils.PrintArray(randomNo);
         }
-       static void PrintArray(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++) {
-                Console.Write(arr[i]+" ");
-            }
-            Console.ReadLine();
-        }
-
         static void BubbleSort(int[] arr)
         { 
             for (int i = 0; i < arr.Length - 1; i++)

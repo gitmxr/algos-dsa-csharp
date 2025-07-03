@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonUtils;
+using System;
 
 namespace QuickSort
 {
@@ -6,16 +7,11 @@ namespace QuickSort
     {
         static void Main(string[] args)
         {
-            int[] randArray = new int[20];
-            Random rand = new Random();
-            for (int i = 0; i < randArray.Length; i++)
-            {
-                randArray[i] = rand.Next(0, 20);
-            }
+            int[] randArray = Utils.GenRandArray();
             Console.WriteLine("unSorted Random Array!");
-            PrintArray(randArray);
+            Utils.PrintArray(randArray);
             Console.WriteLine("Sorted Array(QuickSort)!");
-            PrintArray(QuickSort(randArray));
+            Utils.PrintArray(QuickSort(randArray));
 
 
         }
@@ -52,13 +48,5 @@ namespace QuickSort
                  .Concat(sortedRight)
                  .ToArray();
         }
-       static void PrintArray(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
-            Console.ReadLine();
-        }  
     }
 }

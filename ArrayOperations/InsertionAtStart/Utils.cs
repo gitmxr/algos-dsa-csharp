@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace LinearSearch
+namespace InsertionAtSpecificIndex
 {
     internal class Utils
     {
-       public static int[] GenRandArray()
+        public static int[] GenerateArray()
         {
-            int[] randArray = new int[20];
             Random random = new Random();
-            for (int i = 0; i < randArray.Length; i++)
+            int[] array = new int[15];
+            for (int i = 0; i < array.Length; i++)
             {
-                randArray[i] = random.Next(0, 20);
+                array[i] = random.Next(0, 16);
             }
-            return randArray;
+            return array;
         }
-       public static void PrintArray(int[] arr)
+        public static void PrintArray(int[] arr)
         {
             for (int i = 0; i < arr.Length; i++)
             {
-                Console.Write(arr[i]+" ");
+                Console.Write(arr[i] + " ");
             }
         }
     }

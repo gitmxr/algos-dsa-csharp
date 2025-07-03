@@ -1,26 +1,21 @@
-﻿namespace MergeSort
+﻿using CommonUtils;
+
+namespace MergeSort
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            int[] randArray = new int[20];
-            Random rand = new Random();
-            for (int i = 0; i < randArray.Length; i++)
-            {
-                randArray[i] = rand.Next(0, 20);
-            }
-
+            int[] randArray = Utils.GenRandArray();
+         
             //int[] randArray = {2,1,2,4,3,5};
 
             Console.WriteLine("Unsorted Array:");
-            PrintArray(randArray);
-            Console.WriteLine("\nSorted Array:");
+            Utils.PrintArray(randArray);
+            Console.WriteLine("\nSorted Array(MergeSort):");
             var SortedArray =  MergeSort(randArray);
-            PrintArray(SortedArray);
+            Utils.PrintArray(SortedArray);
             Console.ReadLine();
-
-
         }
 
         static int[] MergeSort(int[] arr)
@@ -98,14 +93,6 @@
             while (j < right.Length) result.Add(right[j++]);
 
             return result.ToArray();
-        }
-
-        static void PrintArray(int[] arr)
-        {
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
         }
     }
 }
